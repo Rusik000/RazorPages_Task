@@ -17,6 +17,11 @@ namespace RazorPages_Task.Services
             _context = context;
         }
 
+        public IEnumerable<Person> GetAll()
+        {
+            return _context.Persons.ToList();
+        }
+
         public void Add(Person person)
         {
             _context.Persons.Add(person);
@@ -31,8 +36,25 @@ namespace RazorPages_Task.Services
                 {
                     _context.Persons.Remove(item);
                 }
+            }
+            _context.SaveChanges();
+        }
+
+        public void Update(Person person)
+        {
+            foreach (var item in _context.Persons)
+            {
+                if (item.Id == person.Id)
+                {
+                    item.Name = person.Name;
+                    item.Surname = person.Surname;
+                    item.Address = person.Address;
+                    item.Age = person.Age;
+                    item.Salary = person.Salary;
+                }
 
             }
+            _context.SaveChanges();
         }
 
         public Person Get(int id)
@@ -48,14 +70,6 @@ namespace RazorPages_Task.Services
 
         }
 
-        public IEnumerable<Person> GetAll()
-        {
-            return _context.Persons.ToList();
-        }
 
-        public void Update(int id)
-        {
-            
-        }
     }
 }

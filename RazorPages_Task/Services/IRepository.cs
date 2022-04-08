@@ -12,8 +12,7 @@ namespace RazorPages_Task.Services
         void Add(Person person);
 
         void Delete(int id);
-
-        void Update(int id);
+       void Update(Person person);
         Person Get(int id);
         IEnumerable<Person> GetAll();
     }

@@ -4,27 +4,27 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using RazorPages_Task.DATA;
 using RazorPages_Task.Entities;
 using RazorPages_Task.Services;
 
-namespace RazorPages_Task.Pages
+namespace RazorPages_Task.Pages.Add
 {
-    public class IndexModel : PageModel
+    public class AddPageModel : PageModel
     {
+
         private readonly IRepository _repository;
 
-        public IndexModel(IRepository repository)
+        public AddPageModel(IRepository repository)
         {
             _repository = repository;
         }
+        [BindProperty]
+        public Person Person { get; set; }
 
-        public List<Person> Persons { get; set; }
-
-        public void OnGet()
+        public IActionResult OnPost()
         {
-            Persons = _repository.GetAll().ToList();
+            _repository.Add(Person);
+            return RedirectToPage("/Index");
         }
-
     }
 }

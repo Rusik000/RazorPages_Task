@@ -1,0 +1,26 @@
+﻿@page
+@model RazorPages_Task.Pages.Update.UpdatePageModel
+@{
+
+}
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+</head>
+<body>
+    <h1>Update Person</h1>
+    <form method="post">
+        Id :  <input asp-for="Person.Id" />
+        Name : <input asp-for="Person.Name" />
+        Surname : <input asp-for="Person.Surname" />
+        Address : <input asp-for="Person.Address" />
+        Age : <input asp-for="Person.Age" />
+        Salary : <input asp-for="Person.Salary" />
+        <input type="submit" value="Submit" />
+    </form>
+</body>
+</html>

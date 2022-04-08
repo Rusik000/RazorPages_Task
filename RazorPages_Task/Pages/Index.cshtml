@@ -12,6 +12,9 @@
 </head>
 <body>
     <h1>Persons</h1>
+    <a href="/Add/AddPage">Add</a> |
+    <a  href="/Delete/DeletePage">Delete</a> |
+    <a  href="/Update/UpdatePage">Update</a>
     <table class="table">
         <thead>
             <tr>
@@ -38,25 +41,5 @@
             }
         </tbody>
     </table>
-
-    @*<form method="post">
-        Name : <input asp-for="Person.Name" />
-        <br />
-        Surname : <input asp-for="Person.Surname" />
-        <br />
-        Address : <input asp-for="Person.Address" />
-        <br />
-        Age : <input asp-for="Person.Age" />
-        <br />
-        Salary : <input asp-for="Person.Salary" />
-        <br />
-        <input type="submit" value="Submit" />
-    </form>*@
-
-    <form asp-page-handler="onpostview" method="post">
-        id : <input asp-for="CheckedId" />
-        <br/>
-        <input type="submit" value="submit" />
-    </form>
 </body>
 </html>

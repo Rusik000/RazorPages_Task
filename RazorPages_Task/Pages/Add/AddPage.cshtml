@@ -10,16 +10,81 @@
 
 <head>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+    <style>
+        body {
+            background-color: bisque;
+            padding: 0;
+            margin: 0;
+            position: relative;
+        }
+
+        h1 {
+            position: absolute;
+            top: -60px;
+            left: 340px;
+            color: green;
+        }
+
+        form {
+            border: 4px solid green;
+            width: 50%;
+            height: 50vh;
+            margin: auto;
+            margin-top: 150px;
+        }
+
+        label {
+            margin-left: 200px;
+            font-size: 1.2em;
+        }
+
+        input {
+            width: 150px;
+            height: 20px;
+            margin-top: 10px;
+            font-size: 1em;
+        }
+
+        .imginput {
+            border: 2px solid red;
+            height: 25px;
+        }
+
+        button {
+            width: 80px;
+            height: 30px;
+            margin-left: 270px;
+            margin-top: 50px;
+            font-size: 1.2em;
+            border: 1px solid black;
+            background-color: rgb(39, 212, 0);
+            color: white;
+            border-radius: 20px;
+        }
+    </style>
 </head>
 <body>
     <h1>Add Person</h1>
     <form method="post">
-        Name : <input asp-for="Person.Name" />
-        Surname : <input asp-for="Person.Surname" />
-        Address : <input asp-for="Person.Address" />
-        Age : <input asp-for="Person.Age" />
-        Salary : <input asp-for="Person.Salary" />
-        <input type="submit" value="Submit" />
+        <label>Name:</label>
+        <input asp-for="Person.Name" />
+        <br />
+        <label>Surname:</label>
+        <input asp-for="Person.Surname" />
+        <br />
+        <label>Address:</label>
+        <input asp-for="Person.Address" />
+        <br />
+        <label>Age:</label>
+        <input asp-for="Person.Age" />
+        <br />
+        <label>Salary:</label>
+        <input asp-for="Person.Salary" />
+        <br />
+        <button type="submit">Add</button>
     </form>
+
+
+
 </body>
 </html>

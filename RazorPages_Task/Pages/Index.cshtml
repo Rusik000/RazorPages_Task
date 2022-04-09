@@ -9,12 +9,27 @@
 
 <head>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+
+    <style>
+        #changePage{
+            position:absolute;
+            right:0;
+            top:0;
+            height:50px;
+            width:300px;
+            
+        }
+    </style>
 </head>
+
+
 <body>
     <h1>Persons</h1>
-    <a href="/Add/AddPage">Add</a> |
-    <a  href="/Delete/DeletePage">Delete</a> |
-    <a  href="/Update/UpdatePage">Update</a>
+    <div class="btn-group" id="changePage">
+        <a  style="font-size:1.5em" href="/Add/AddPage" class="btn btn-primary active" >Add</a>
+        <a  style="font-size:1.5em" href="/Delete/DeletePage" class="btn btn-primary active">Delete</a>
+        <a style="font-size:1.5em" href="/Update/UpdatePage" class="btn btn-primary active" >Update</a>
+    </div>
     <table class="table">
         <thead>
             <tr>
@@ -24,7 +39,6 @@
                 <th scope="col">Address</th>
                 <th scope="col">Age</th>
                 <th scope="col">Salary</th>
-                <th scope="col">Edit</th>
             </tr>
         </thead>
         <tbody>
